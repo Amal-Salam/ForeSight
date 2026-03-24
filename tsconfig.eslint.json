@@ -4,6 +4,8 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "test/**/*.ts",
-    "test/**/*.tsx"
+    "test/**/*.tsx",
+    "convex/**/*.ts",
+    "convex/**/*.tsx"
   ]
 }

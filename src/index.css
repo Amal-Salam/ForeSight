@@ -5,11 +5,110 @@
 @source "../src";
 @theme {
     --color-offwhite: #f8f8f8;
-    /* Ensure 'offwhite' is defined here */
     --color-iris: #5d5dff;
-    /* Ensure 'iris' is defined here */
+        --color-metallic-gold: #D4AF37;
+        --color-gold-low: #8A6621;
+        --color-gold-high: #FFF9E3;
+    
+        --color-metallic-silver: #C0C0C0;
+        --color-silver-low: #334155;
+        --color-silver-high: #FFFFFF;
+    
+        --color-metallic-rose-gold: #B76E79;
+        --color-rose-low: #704248;
+        --color-rose-high: #FFE4E8;
+
     --backdrop-blur-glass: 12px;
 }
+@utility bg-glossy-gold {
+    background: linear-gradient(135deg,
+            var(--color-gold-low) 0%,
+            var(--color-metallic-gold) 45%,
+            var(--color-gold-high) 50%,
+            var(--color-metallic-gold) 55%,
+            var(--color-gold-low) 100%);
+    background-size: 200% auto;
+}
+
+@utility text-glossy-gold {
+    background: linear-gradient(135deg,
+            var(--color-gold-low) 20%,
+            var(--color-metallic-gold) 45%,
+            var(--color-gold-high) 50%,
+            var(--color-metallic-gold) 55%,
+            var(--color-gold-low) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+/* --- Glossy Silver --- */
+@utility bg-glossy-silver {
+    background: linear-gradient(135deg,
+            var(--color-silver-low) 0%,
+            var(--color-metallic-silver) 40%,
+            var(--color-silver-high) 50%,
+            var(--color-metallic-silver) 60%,
+            var(--color-silver-low) 100%);
+    background-size: 200% auto;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+@utility text-glossy-silver {
+    background: linear-gradient(135deg,
+            var(--color-silver-low) 20%,
+            var(--color-metallic-silver) 45%,
+            var(--color-silver-high) 50%,
+            var(--color-metallic-silver) 55%,
+            var(--color-silver-low) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+}
+@utility bg-glossy-rose {
+    background: linear-gradient(135deg,
+            var(--color-rose-low) 0%,
+            var(--color-metallic-rose-gold) 45%,
+            var(--color-rose-high) 50%,
+            var(--color-metallic-rose-gold) 55%,
+            var(--color-rose-low) 100%);
+    background-size: 200% auto;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Glossy Rose Gold Text Utility */
+@utility text-glossy-rose {
+    background: linear-gradient(135deg,
+            var(--color-rose-low) 20%,
+            var(--color-metallic-rose-gold) 45%,
+            var(--color-rose-high) 50%,
+            var(--color-metallic-rose-gold) 55%,
+            var(--color-rose-low) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+}
+
+/* --- Shimmer Animation --- */
+@utility animate-shimmer {
+    animation: shimmer 15s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 :root {
     --bg: var(--color-offwhite);

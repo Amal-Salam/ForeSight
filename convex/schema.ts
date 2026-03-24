@@ -21,9 +21,23 @@ export default defineSchema({
     workspaceId: v.id("workspaces"),
     userId: v.id("users"),
     role: v.union(v.literal("admin"), v.literal("member")),
-  }).index("byWorkspace", ["workspaceId"])
+  })
+    .index("byWorkspace", ["workspaceId"])
     .index("byUser", ["userId"]),
-
+  invites: defineTable({
+    workspaceId: v.id("workspaces"),
+    email: v.string(),
+    token: v.string(),
+    role: v.union(v.literal("admin"), v.literal("member")),
+    invitedBy: v.id("users"),
+    status: v.union(v.literal("pending"), v.literal("accepted"), v.literal("expired")),
+    createdAt: v.number(),
+    expiresAt: v.number(),
+  })
+    .index("byToken", ["token"])
+    .index("byWorkspace", ["workspaceId"])
+    .index("byEmail", ["email"]),
+    
   tasks: defineTable({
     workspaceId: v.id("workspaces"),
     title: v.string(),
@@ -32,6 +46,7 @@ export default defineSchema({
     assigneeId: v.optional(v.id("users")),
     dueDate: v.optional(v.number()),
     iddSuggested: v.optional(v.number()),
+    aiReason: v.optional(v.string()),       // ← new: stores AI's reasoning for due date
     storyPoints: v.optional(v.number()),
     createdAt: v.number(),
     createdBy: v.id("users"),
