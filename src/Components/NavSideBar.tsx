@@ -5,7 +5,7 @@ import { BsRobot } from "react-icons/bs";
 import { twMerge } from "tailwind-merge";
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api.js";
-import { useWorkspace } from "../Lib/Workspacecontext.js";
+import { useWorkspace } from "../Lib/WorkspaceContext.js";
 import { useNavigate, useLocation } from "react-router-dom";
 import InviteModal from "./InviteModal.js";
 

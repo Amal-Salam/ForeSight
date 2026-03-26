@@ -2,7 +2,7 @@
 import NavSidebar from "./NavSideBar.js";
 import TopNav from "./TopNavBar.js";
 import AIIntelligenceBar from "./AIBar.js";
-import { useWorkspace } from "../Lib/Workspacecontext.js";
+import { useWorkspace } from "../Lib/WorkspaceContext.js";
 import { BsRobot } from "react-icons/bs";
 import { FiPlus } from "react-icons/fi";
 import { useMutation } from "convex/react";

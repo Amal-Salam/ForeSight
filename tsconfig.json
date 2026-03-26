@@ -31,6 +31,6 @@
     "src/**/*.tsx",    /* 👈 This tells TS/ESLint to include React files */
     "src/**/*.d.ts",
     "vite-env.d.ts"
-, "src/Lib/Workspacecontext.tsx"  ],
+, "src/Lib/WorkspaceContext.tsx"  ],
   "exclude": ["node_modules", "dist"]
 }
